@@ -1,0 +1,24 @@
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+    <div class="w3-bar w3-white w3-card" id="myNavbar">
+
+      <!-- Right-sided navbar links -->
+      <div class="w3-left w3-hide-small">
+        <a href="home.html" class="w3-bar-item w3-button w3-wide">Home</a>
+        <a routerLink="studentsurveys" routerLinkActive="active" class="w3-bar-item w3-button">Student Survey List</a>
+        <a routerLink="create-studentsurvey" routerLinkActive="active" class="w3-bar-item w3-button">Student Survey Form</a>
+      </div>
+      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
+<h1 class="text-center">{{title}}</h1>
+<div class ="container">
+    <router-outlet></router-outlet>
+</div>
+
+
+

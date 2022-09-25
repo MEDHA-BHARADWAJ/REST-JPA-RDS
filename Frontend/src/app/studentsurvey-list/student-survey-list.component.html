@@ -1,0 +1,38 @@
+
+<table class ="table table-striped">
+    <thead>
+        <tr>
+            <th>firstName</th>
+            <th>lastName</th>
+            <th>streetAddress</th>
+            <th>city</th>
+            <th>state</th>
+            <th>zip</th>
+            <th>dateOfSurvey</th>
+            <th>phone</th>
+            <th>email</th>
+            <th>liking</th>
+            <th>sourceOfUni</th>
+            <th>likelihood</th>
+            <!-- <th>Raffle</th> -->
+            <!-- <th>comments</th> -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor ="let student of studentSurveys">
+            <td> {{ student.firstName}}</td>
+            <td> {{ student.lastName}}</td>
+            <td> {{ student.streetAddress}}</td>
+            <td> {{ student.city}}</td>
+            <td> {{ student.state}}</td>
+            <td> {{ student.zip}}</td>
+            <td> {{ student.dateOfSurvey}}</td>
+            <td> {{ student.phone}}</td>
+            <td> {{ student.email}}</td>
+            <th> {{ student.liking}}</th>
+            <td> {{ student.sourceOfUni}}</td>
+            <td> {{ student.likelihood}}</td>
+            <!-- <th> {{ student.comments}}</th> -->
+        </tr>
+    </tbody>
+</table>

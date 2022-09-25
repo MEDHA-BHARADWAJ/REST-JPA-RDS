@@ -1,0 +1,56 @@
+<body class="formst">
+<div class="container mt-3" >
+    <span class="heading"><b>Student Survey form</b> </span>
+      <form class="form-inline" #form=ngForm >
+        <div class="form-group">
+          <label for="firstname">Firstname:</label>
+          <input type="text" class="form-control" id="firstname" [(ngModel)] ="studentsurvey.firstName" placeholder="Enter firstname" name="firstname" required>
+          <label for="lastname">Lastname:</label>
+          <input type="text" class="form-control" id="lastname" [(ngModel)] ="studentsurvey.lastName" placeholder="Enter lastname" name="lastname" required>
+          <label for="address">Street address:</label>
+          <input type="text" class="form-control" id="address" [(ngModel)] ="studentsurvey.streetAddress" placeholder="Enter street address" name="address" required>
+          <label for="city">City:</label>
+          <input type="text" class="form-control" id="city" [(ngModel)] ="studentsurvey.city" placeholder="Enter city" name="city" required>
+          <label for="state">State:</label>
+          <input type="text" class="form-control" id="state" [(ngModel)] ="studentsurvey.state" placeholder="Enter state" name="state" required>
+          <label for="zip">Zip:</label>
+          <input type="text" class="form-control" id="zip" [(ngModel)] ="studentsurvey.zip" placeholder="Enter zip" name="zip" required>
+          <label for="zip">Date:</label>
+          <input type="text" class="form-control" id="date" [(ngModel)] ="studentsurvey.dateOfSurvey" placeholder="Enter date of survey" name="date" required>
+          <div  class ="mb-3 mt-3">
+            <label for="phone">Phoneno:</label>
+            <input type="text" class="form-control" id="phone" [(ngModel)] ="studentsurvey.phone" placeholder="Enter phone number" name="phoneno" required>
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" [(ngModel)] ="studentsurvey.email" placeholder="Enter email" name="email" required>
+          </div>
+          <label > What did you like most about the campus?</label>
+          <div *ngFor="let like of likedList">
+            <label>
+              <input type="checkbox" [value]="like.id" (change)="onCheckboxChange($event)" />
+              {{like.name}}
+            </label>
+          </div>
+          <div>
+            <label > How did you find out about our school?</label>
+            <input type="radio"  value="friends" (change)="onRadioChange($event)"><span>friends</span>
+            <input type="radio"  value="television" (change)="onRadioChange($event)"><span>television</span>
+            <input type="radio" value="internet" (change)="onRadioChange($event)"><span>internet</span>
+            <input type="radio" value="other" (change)="onRadioChange($event)"><span>other</span>
+          </div>
+          <div></div>
+          <label > What is the likelihood that you will recommend our school to others?</label>
+          <div>
+            <select (change)="onOptionChange($event)">
+              <option disabled>Choose Likelihood</option>
+              <option *ngFor="let likehd of likelihoodList">{{likehd.name}}</option>
+            </select>
+          </div>
+          <div></div>
+          <div class="form-buttons mt-3">
+            <button type="submit" class="btn btn-success mt-3" (click)="onSubmit();form.resetForm()">Submit</button>
+            <button type="cancel" class="btn btn-secondary mt-3" (click)="form.resetForm()">Cancel</button>
+          </div>
+        </div>
+      </form>
+     </div>
+    </body>
